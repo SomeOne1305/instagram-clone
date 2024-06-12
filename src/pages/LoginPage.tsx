@@ -1,4 +1,5 @@
-import { useMutation } from '@tanstack/react-query'
+import { UseMutationResult, useMutation } from '@tanstack/react-query'
+import { AxiosError, AxiosResponse } from 'axios'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import { Link } from 'react-router-dom'
@@ -9,6 +10,7 @@ import { Button } from '../components/ui'
 import { structuredData } from '../constants/structuredSeo'
 import { AuthService } from '../services/Auth.service'
 import { useAuthStore } from '../stores/useAuthStore'
+import { IError } from '../types/api.interface'
 import { ILogin } from '../types/auth.interface'
 
 const LoginPage = () => {
@@ -16,7 +18,15 @@ const LoginPage = () => {
 
 	const { checkAuth } = useAuthStore()
 
-	const { mutateAsync, error, isError } = useMutation({
+	const {
+		mutateAsync,
+		error,
+		isError,
+	}: UseMutationResult<
+		AxiosResponse<ILogin>,
+		AxiosError<IError>,
+		ILogin
+	> = useMutation({
 		mutationKey: ['LOGIN'],
 		mutationFn: (data: ILogin) => AuthService.login(data),
 	})

@@ -1,4 +1,5 @@
-import { useMutation } from '@tanstack/react-query'
+import { UseMutationResult, useMutation } from '@tanstack/react-query'
+import { AxiosError, AxiosResponse } from 'axios'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import { Link } from 'react-router-dom'
@@ -9,11 +10,20 @@ import { Button } from '../components/ui'
 import { structuredData } from '../constants/structuredSeo'
 import { AuthService } from '../services/Auth.service'
 import { useAuthStore } from '../stores/useAuthStore'
+import { IError } from '../types/api.interface'
 import { IRegister } from '../types/auth.interface'
 
 const RegisterPage = () => {
 	const { register, reset, handleSubmit } = useForm()
-	const { mutateAsync, isError, error } = useMutation({
+	const {
+		mutateAsync,
+		isError,
+		error,
+	}: UseMutationResult<
+		AxiosResponse<IRegister>,
+		AxiosError<IError>,
+		IRegister
+	> = useMutation({
 		mutationKey: ['REGISTER'],
 		mutationFn: (data: IRegister) => AuthService.register(data),
 	})

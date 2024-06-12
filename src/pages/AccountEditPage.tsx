@@ -301,7 +301,7 @@ const AccountEditPage = () => {
 						/>
 					</div>
 					<ChangeInfoForm />
-					{/* <ChangePasswordForm /> */}
+					{false && <ChangePasswordForm />}
 					<AnimatePresence>
 						{isOpen && (
 							<motion.div>
