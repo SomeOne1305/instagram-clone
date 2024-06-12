@@ -1,0 +1,21 @@
+@layer utilities {
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover,
+	input:-webkit-autofill:focus,
+	input:-webkit-autofill:active {
+		-webkit-box-shadow: 0 0 0 30px #f9fafb inset !important; /* Match with input background color */
+		box-shadow: 0 0 0 30px #f9fafb inset !important;
+		-webkit-text-fill-color: #000 !important; /* Text color */
+		transition: background-color 5000s ease-in-out 0s;
+	}
+
+	.dark input:-webkit-autofill,
+	.dark input:-webkit-autofill:hover,
+	.dark input:-webkit-autofill:focus,
+	.dark input:-webkit-autofill:active {
+		-webkit-box-shadow: 0 0 0 30px transparent inset !important;
+		box-shadow: 0 0 0 30px transparent inset !important;
+		-webkit-text-fill-color: #f1f5f9 !important;
+		transition: background-color 5000s ease-in-out 0s;
+	}
+}

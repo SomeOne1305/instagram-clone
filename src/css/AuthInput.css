@@ -1,0 +1,3 @@
+.label > input:not(:placeholder-shown) ~ span {
+	@apply top-1 text-xs;
+}

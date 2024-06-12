@@ -1,0 +1,10 @@
+.otp::-webkit-outer-spin-button,
+.otp::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firef.otp */
+.otp[type='number'] {
+	-moz-appearance: textfield;
+}
