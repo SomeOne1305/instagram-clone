@@ -17,6 +17,7 @@ export const useAuthStore = create<AuthState>(set => ({
 		set({ loading: true })
 		setTimeout(async () => {
 			const refreshToken = cookies.get('refresh_token')
+
 			set({ isAuthenticated: !!refreshToken, loading: false })
 			console.clear()
 			console.log(`

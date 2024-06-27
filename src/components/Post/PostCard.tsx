@@ -84,7 +84,6 @@ const PostCard = ({ data, index }: { data: IPost; index: number }) => {
 		await postDelete.mutateAsync(data?.id)
 		await client.refetchQueries({ queryKey: ['GET_POSTS'] })
 	}
-
 	return (
 		<div className='w-full flex flex-col relative ' key={data?.id}>
 			<AnimatePresence>

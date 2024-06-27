@@ -30,7 +30,7 @@ const App = () => {
 	}
 
 	return (
-		<div className='w-full min-h-screen bg-light dark:bg-dark py-4 scroll-smooth'>
+		<div className='w-full min-h-screen py-4'>
 			<Toaster position='top-center' />
 			<HelmetProvider>
 				<Outlet />

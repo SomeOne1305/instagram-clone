@@ -25,7 +25,6 @@ const HomePage = () => {
 			getPosts.fetchNextPage()
 		}
 	})
-	console.log(window.location.origin)
 
 	return (
 		<div className='w-full pt-20'>

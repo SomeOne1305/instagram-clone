@@ -10,7 +10,8 @@ const VideoContainer: FC<{ src: string; index: number }> = ({ src, index }) => {
 	const [isPlaying, setIsPlaying] = useState(false)
 	const { isMuted, toggleMute } = useMuteStateStore()
 	const { ref, inView } = useInView({
-		threshold: index === 0 ? 0.9 : 0.5,
+		threshold: index === 0 ? 1 : 0.5,
+		rootMargin: '40px 0px',
 	})
 
 	useEffect(() => {
@@ -96,9 +97,8 @@ const VideoContainer: FC<{ src: string; index: number }> = ({ src, index }) => {
 			ref={ref}
 			className='relative w-full max-w-full overflow-hidden rounded-md'
 			style={{
-				paddingTop: `${(aspectRatio.h / aspectRatio.w) * 74}%`,
+				paddingTop: `${(aspectRatio.h / aspectRatio.w) * 70}%`,
 				maxHeight: '640px',
-				maxWidth: '100%',
 				minHeight: '320px',
 			}}
 		>

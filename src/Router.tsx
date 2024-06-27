@@ -27,7 +27,14 @@ export const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path='/' element={<App />}>
 			<Route element={<UserLayout />}>
-				<Route path='' element={<HomePage />} />
+				<Route
+					path=''
+					element={
+						<ProtectedRoute>
+							<HomePage />
+						</ProtectedRoute>
+					}
+				/>
 				<Route
 					path=':username'
 					element={<UserPage />}

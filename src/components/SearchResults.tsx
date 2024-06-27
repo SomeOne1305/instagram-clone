@@ -36,7 +36,7 @@ const SearchResults = () => {
 						<div className='py-1 px-3'>
 							<Link
 								to={`/${item.username}/`}
-								className='dakk:text-slate-100 font-bold text-base'
+								className='dark:text-slate-100 font-bold text-base'
 							>
 								{item.username}
 							</Link>
