@@ -9,6 +9,8 @@ import { API } from './api'
 
 export const AuthService = {
 	async login(data: ILogin) {
+		console.log(data, import.meta.env.VITE_REACT_APP_API_BASE_URL)
+
 		return (await API.post('/auth/login', data)).data
 	},
 	async register(data: IRegister) {
