@@ -37,7 +37,7 @@ API.interceptors.response.use(
 				)
 
 				// Retry the original request with new tokens
-				return axios(originalRequest)
+				return API(originalRequest)
 			} catch (refreshError) {
 				console.log('Error refreshing token:', refreshError)
 				window.location.replace('/auth/login') // Redirect to login page
